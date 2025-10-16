@@ -31,7 +31,7 @@ animalController.get('/:animalId/details', async(req, res) => {
 
         res.render('animals/details', {animal, isCreator});
     } catch (error) {
-        const errorMessage = getErrorMessage(error);
+        const errorMessage = "This post doesn't exist";
         res.status(404).render('404', {error: errorMessage});
     }
 })
