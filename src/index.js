@@ -32,8 +32,9 @@ app.set('views', 'src/views');
 app.use(express.static('src/public'));
 app.use(express.urlencoded());
 app.use(cookieParser());
+app.use(authMiddleware);
 
 app.use(router);
-app.use(authMiddleware);
+
 
 app.listen(3000, () => {console.log('Server is listening on port http://localhost:3000....')});

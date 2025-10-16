@@ -5,7 +5,7 @@ export default function authMiddleware(req, res, next) {
     const token = req.cookies['auth'];
 
     if (!token) {
-        next();
+        return next();
     }
 
     try {
@@ -17,6 +17,7 @@ export default function authMiddleware(req, res, next) {
         res.locals.user = decodedToken;
         res.locals.isAuthenticated = true;
 
+        next();
     } catch (error) {
         res.clearCookie('auth');
         res.redirect('/auth/login');
