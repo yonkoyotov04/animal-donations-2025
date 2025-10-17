@@ -24,5 +24,13 @@ export default {
             ...animalData,
             ownerId: creatorId
         })
+    },
+
+    editAnimal(animalId, animalData) {
+        return Animal.findByIdAndUpdate(animalId, animalData, {runValidators: true});
+    },
+
+    deleteAnimal(animalId) {
+        return Animal.findByIdAndDelete(animalId);
     }
 }

@@ -9,7 +9,7 @@ SoftUni Back-End Course Exercise
 - [x] Login
 - [x] Create
 - [x] Details
-- [] Edit
+- [x] Edit
 - [x] 404
 
 ## Functions
@@ -21,8 +21,8 @@ SoftUni Back-End Course Exercise
 - [x] Login
 - [x] Logout
 - [x] Create animal
-- [] Edit animal
-- [] Delete animal
+- [x] Edit animal
+- [x] Delete animal
 - [] Donate to animal
 - [] Show that you've already donated
 
