@@ -8,11 +8,6 @@ homeController.get('/', async (req, res) => {
     res.render('home', { animals });
 })
 
-
-homeController.get('/search', (req, res) => {
-    res.render('search');
-})
-
 homeController.get('/dashboard', async (req, res) => {
     const animals = await animalService.getAllAnimals();
     res.render('dashboard', { animals });

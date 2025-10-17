@@ -36,4 +36,11 @@ animalController.get('/:animalId/details', async(req, res) => {
     }
 })
 
+animalController.get('/search', async (req, res) => {
+    const filter = req.query;
+    const animals = await animalService.getAllAnimals(filter);
+
+    res.render('search', {animals, filter});
+})
+
 export default animalController;

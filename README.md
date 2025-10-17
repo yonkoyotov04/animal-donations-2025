@@ -16,7 +16,7 @@ SoftUni Back-End Course Exercise
 - [x] Show last three animals on home page
 - [x] Show all animals on dashboard
 - [x] Show details
-- [] Search
+- [x] Search
 - [x] Register
 - [x] Login
 - [x] Logout
