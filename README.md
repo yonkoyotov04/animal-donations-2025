@@ -23,16 +23,17 @@ SoftUni Back-End Course Exercise
 - [x] Create animal
 - [x] Edit animal
 - [x] Delete animal
-- [] Donate to animal
-- [] Show that you've already donated
+- [x] Donate to animal
+- [x] Show that you've already donated
 
 ## Error Handling
  - [x] Login
  - [x] Register
  - [x] Create
- - [] Details
- - [] Edit
+ - [x] Details
+ - [x] Edit
  - [] Delete
+ - [] Donate
 
 ## Bonus
 - [] Dynamic Title

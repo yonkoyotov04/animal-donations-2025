@@ -38,8 +38,11 @@
                     {{else}}
                     {{#if isAuthenticated}}
                     <div id="action-buttons">
+                        {{#if notDonated}}
                         <a href="/animals/{{animal._id}}/donate" id="donation-btn">Donation</a>
-                        <!-- <p id="already-donated">You already donated!</p> -->
+                        {{else}}
+                        <p id="already-donated">You already donated!</p>
+                        {{/if}}
                     </div>
                     {{/if}}
                     {{/if}}

@@ -28,8 +28,9 @@ animalController.get('/:animalId/details', async(req, res) => {
         const animalId = req.params.animalId;
         const animal = await animalService.getOneAnimal(animalId);
         const isCreator = animal.ownerId && animal.ownerId.equals(req.user?.id);
+        const notDonated = !animal.donations.includes(req.user.id);
 
-        res.render('animals/details', {animal, isCreator});
+        res.render('animals/details', {animal, isCreator, notDonated});
     } catch (error) {
         const errorMessage = "This post doesn't exist";
         res.status(404).render('404', {error: errorMessage});
@@ -81,6 +82,20 @@ animalController.get('/:animalId/delete', isAuth, async(req, res) => {
     } catch (error) {
         res.status(400).render('404', {error: "Animal not found!"});
     }
+})
+
+animalController.get('/:animalId/donate', isAuth, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const animalId = req.params.animalId;
+
+        await animalService.donate(animalId, userId);
+        res.redirect(`/animals/${animalId}/details`);
+    } catch (error) {
+        const errorMessage = getErrorMessage(error);
+        res.status(400).render('404', {error: errorMessage});
+    }
+    
 })
 
 animalController.get('/search', async (req, res) => {
